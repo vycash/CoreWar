@@ -1,18 +1,18 @@
-pour executer le jeu en mode terminal executer le script script.sh dans le repertoire src
-pour executer le jeu en mode interface graphique executer le scriptVue.sh dans le repertoire src
+pour executer le jeu en mode terminal executer le script script.sh dans le repertoire src  
+pour executer le jeu en mode interface graphique executer le scriptVue.sh dans le repertoire src  
 
-terminal : src/scripth.sh
-graphique : src/scriptVue.sh
+terminal : src/scripth.sh  
+graphique : src/scriptVue.sh  
 
 
 ## vous trouverez des diagrammes des classes détaillés dans informations/diagrammes
 
 # CoreWar
 
-Le projet CoreWar est un jeu informatique inspiré par un concept créatif introduit dans les années 1980.
-Dans ce jeu, les participants écrivent des programmes (appelés ”guerriers” ) dans un langage de bas niveau conçu spécifiquement pour cette compétition. 
-Ces programmes sont exécutés dans une ”arène” virtuelle, où ils s’affrontent pour le contrôle de la mémoire du système.
-Un programme est éliminé s’il effectue une opération illégale.
+Le projet CoreWar est un jeu informatique inspiré par un concept créatif introduit dans les années 1980.  
+Dans ce jeu, les participants écrivent des programmes (appelés ”guerriers” ) dans un langage de bas niveau conçu spécifiquement pour cette compétition.  
+Ces programmes sont exécutés dans une ”arène” virtuelle, où ils s’affrontent pour le contrôle de la mémoire du système.  
+Un programme est éliminé s’il effectue une opération illégale.  
 Les étapes pour effectuer une telle concéption se regroupent sous :
 - l’implémentation d’une machine virtuelle MARS (Memory array RedCode simulator )
 - implémentation d’un interpréteur RedCode ICWS-88
@@ -21,16 +21,13 @@ Les étapes pour effectuer une telle concéption se regroupent sous :
 
 # Fonctionnement
 
-Les programmes sont créés avec des instructions qui serent à initialiser une file d’instructions qui serent ensuite à initialiser une Arène MARS pour commencer le jeu.
-La MARS commence par placer chacun des programmes dans l’arène et continue le jeu tant qu’il y’as plus d’un joueur. 
-Pendant chaque tour du jeu chacun des programmes dans l’arène effectue une seule instruction puis l’etat du jeu est envoyé au controlleur qui lui donne signal à la vue pour se mettre à jour, Un programme est éliminé selon les normes du ICWS-88.
+Les programmes sont créés avec des instructions qui serent à initialiser une file d’instructions qui serent ensuite à initialiser une Arène MARS pour commencer le jeu.  
+La MARS commence par placer chacun des programmes dans l’arène et continue le jeu tant qu’il y’as plus d’un joueur.   
+Pendant chaque tour du jeu chacun des programmes dans l’arène effectue une seule instruction puis l’etat du jeu est envoyé au controlleur qui lui donne signal à la vue pour se mettre à jour, Un programme est éliminé selon les normes du ICWS-88.  
 
 
 # ICWS-88
-La norme ICWS-88, qui signifie ”Intermediate Core War Standard 1988” (Norme
-intermédiaire de la guerre des cœurs 1988), définit un ensemble de règles stan-
-dardisées régissant les aspects clés de ces compétitions. Voici une explication
-des principaux éléments de cette norme :
+La norme ICWS-88, qui signifie ”Intermediate Core War Standard 1988” (Norme intermédiaire de la guerre des cœurs 1988), définit un ensemble de règles standardisées régissant les aspects clés de ces compétitions. Voici une explication des principaux éléments de cette norme :  
 
 ## Structure du programme (Guerrier)
 - Un programme, ou guerrier, est écrit dans un langage spécifique appelé RedCode.
@@ -49,38 +46,37 @@ des principaux éléments de cette norme :
 - Les modes d’adressage déterminent la façon dont les opérandes sont interprétés : direct, immédiat, indirect, pré-décrémenté.
 
 ### Adressage immédiat (#) 
-L’opérande contient une valeur immédiate plutôt qu’une adresse mémoire.
+L’opérande contient une valeur immédiate plutôt qu’une adresse mémoire.  
 Exemple : MOV #5, R1 signifie ”mettre la valeur 5 dans le registre R1”.
 
 ### Adressage direct () 
-L’opérande contient une adresse mémoire où la valeur doit être lue ou écrite.
+L’opérande contient une adresse mémoire où la valeur doit être lue ou écrite.  
 Exemple : MOV 100, R1 signifie ”mettre la valeur située à l’adresse mémoire 100 dans le registre R1”.
 
 
 ### Adressage indirect (@) 
-L’opérande contient une adresse mémoire qui pointe vers une autre adresse mémoire où la valeur doit être lue ou écrite.
+L’opérande contient une adresse mémoire qui pointe vers une autre adresse mémoire où la valeur doit être lue ou écrite.  
 Exemple : MOV (@100), R1 signifie ”mettre la valeur située à l’adresse mémoire contenue dans l’adresse mémoire 100 dans le registre R1”.
 
 ### Adressage relatif (<) 
-L’opérande contient un décalage par rapport à l’adresse de l’instruction en cours d’exécution. 
-< est utilisé pour indiquer un décalage vers une adresse antérieure à l’instruction.
+L’opérande contient un décalage par rapport à l’adresse de l’instruction en cours d’exécution.   
+< est utilisé pour indiquer un décalage vers une adresse antérieure à l’instruction.  
 Exemple : JMP <5 signifie ”sauter en arrière de 5 instructions”.
 
 ### Instructions RedCode selon ICWS-88
 
-La norme ICWS-88 définit 11 instructions :
-– MOV : copie A vers B
-– ADD : ajoute A à B
-– SUB : soustrait A de B
-– JMP : saute à l’adresse A
-– JMZ : saute à l’adresse A si B est nul
-– JMN : saute à l’adresse A si B est non nul
-– CMP : si A = B, saute l’instruction suivante
-– SLT : si A ¡ B, saute l’instruction suivante
-– DJN : décrémente A, puis saute à l’adresse A si B n’est pas nul
-– SPL : crée un nouveau processus démarrant à l’adresse A
-– DAT : qui n’est pas une instruction à proprement parler, mais peut servir
-à stocker des données dans ses opérandes A et B
+La norme ICWS-88 définit 11 instructions :  
+- MOV : copie A vers B
+- ADD : ajoute A à B
+- SUB : soustrait A de B
+- JMP : saute à l’adresse A
+- JMZ : saute à l’adresse A si B est nul
+- JMN : saute à l’adresse A si B est non nul
+- CMP : si A = B, saute l’instruction suivante
+- SLT : si A ¡ B, saute l’instruction suivante
+- DJN : décrémente A, puis saute à l’adresse A si B n’est pas nul
+- SPL : crée un nouveau processus démarrant à l’adresse A
+- DAT : qui n’est pas une instruction à proprement parler, mais peut servir à stocker des données dans ses opérandes A et B
 
 
 
@@ -152,6 +148,8 @@ The ICWS-88 standard includes 11 instructions:
 # The legal CoreWar instructions are:
 # Les Instructions légales selon la norme ICWS-88 sont:
 
+#### MOV and Related Commands
+
 MOV  # A    B       SLT  # A    B       DJN    A  # B       SPL    A  # B
 MOV  # A  @ B       SLT  # A  @ B       DJN    A    B       SPL    A    B
 MOV  # A  < B       SLT  # A  < B       DJN    A  @ B       SPL    A  @ B
@@ -165,6 +163,7 @@ MOV  < A    B       SLT  < A    B       DJN  < A    B       SPL  < A    B
 MOV  < A  @ B       SLT  < A  @ B       DJN  < A  @ B       SPL  < A  @ B
 MOV  < A  < B       SLT  < A  < B       DJN  < A  < B       SPL  < A  < B
 
+#### ADD, JMP, and DAT Commands
 ADD  # A    B       JMP    A  # B
 ADD  # A  @ B       JMP    A    B                           DAT  # A  # B
 ADD  # A  < B       JMP    A  @ B                           DAT  # A  < B
@@ -178,6 +177,7 @@ ADD  < A    B       JMP  < A    B
 ADD  < A  @ B       JMP  < A  @ B
 ADD  < A  < B       JMP  < A  < B
 
+#### SUB and JMZ Commands
 SUB  # A    B       JMZ    A  # B
 SUB  # A  @ B       JMZ    A    B
 SUB  # A  < B       JMZ    A  @ B
@@ -191,6 +191,7 @@ SUB  < A    B       JMZ  < A    B
 SUB  < A  @ B       JMZ  < A  @ B
 SUB  < A  < B       JMZ  < A  < B
 
+#### CMP and JMN Commands
 CMP  # A    B       JMN    A  # B
 CMP  # A  @ B       JMN    A    B
 CMP  # A  < B       JMN    A  @ B
@@ -203,12 +204,6 @@ CMP  @ A  < B       JMN  < A  # B
 CMP  < A    B       JMN  < A    B
 CMP  < A  @ B       JMN  < A  @ B
 CMP  < A  < B       JMN  < A  < B
-
-
-
-
-
-
 
 
 
