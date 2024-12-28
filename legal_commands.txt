@@ -1,0 +1,51 @@
+MOV  # A    B       SLT  # A    B       DJN    A  # B       SPL    A  # B
+MOV  # A  @ B       SLT  # A  @ B       DJN    A    B       SPL    A    B
+MOV  # A  < B       SLT  # A  < B       DJN    A  @ B       SPL    A  @ B
+MOV    A    B       SLT    A    B       DJN    A  < B       SPL    A  < B
+MOV    A  @ B       SLT    A  @ B       DJN  @ A  # B       SPL  @ A  # B
+MOV    A  < B       SLT    A  < B       DJN  @ A    B       SPL  @ A    B
+MOV  @ A    B       SLT  @ A    B       DJN  @ A  @ B       SPL  @ A  @ B
+MOV  @ A  @ B       SLT  @ A  @ B       DJN  @ A  < B       SPL  @ A  < B
+MOV  @ A  < B       SLT  @ A  < B       DJN  < A  # B       SPL  < A  # B
+MOV  < A    B       SLT  < A    B       DJN  < A    B       SPL  < A    B
+MOV  < A  @ B       SLT  < A  @ B       DJN  < A  @ B       SPL  < A  @ B
+MOV  < A  < B       SLT  < A  < B       DJN  < A  < B       SPL  < A  < B
+
+ADD  # A    B       JMP    A  # B
+ADD  # A  @ B       JMP    A    B                           DAT  # A  # B
+ADD  # A  < B       JMP    A  @ B                           DAT  # A  < B
+ADD    A    B       JMP    A  < B                           DAT  < A  # B
+ADD    A  @ B       JMP  @ A  # B                           DAT  < A  < B
+ADD    A  < B       JMP  @ A    B
+ADD  @ A    B       JMP  @ A  @ B
+ADD  @ A  @ B       JMP  @ A  < B
+ADD  @ A  < B       JMP  < A  # B
+ADD  < A    B       JMP  < A    B
+ADD  < A  @ B       JMP  < A  @ B
+ADD  < A  < B       JMP  < A  < B
+
+SUB  # A    B       JMZ    A  # B
+SUB  # A  @ B       JMZ    A    B
+SUB  # A  < B       JMZ    A  @ B
+SUB    A    B       JMZ    A  < B
+SUB    A  @ B       JMZ  @ A  # B
+SUB    A  < B       JMZ  @ A    B
+SUB  @ A    B       JMZ  @ A  @ B
+SUB  @ A  @ B       JMZ  @ A  < B
+SUB  @ A  < B       JMZ  < A  # B
+SUB  < A    B       JMZ  < A    B
+SUB  < A  @ B       JMZ  < A  @ B
+SUB  < A  < B       JMZ  < A  < B
+
+CMP  # A    B       JMN    A  # B
+CMP  # A  @ B       JMN    A    B
+CMP  # A  < B       JMN    A  @ B
+CMP    A    B       JMN    A  < B
+CMP    A  @ B       JMN  @ A  # B
+CMP    A  < B       JMN  @ A    B
+CMP  @ A    B       JMN  @ A  @ B
+CMP  @ A  @ B       JMN  @ A  < B
+CMP  @ A  < B       JMN  < A  # B
+CMP  < A    B       JMN  < A    B
+CMP  < A  @ B       JMN  < A  @ B
+CMP  < A  < B       JMN  < A  < B

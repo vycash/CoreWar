@@ -145,65 +145,9 @@ The ICWS-88 standard includes 11 instructions:
 
 
 
-# The legal CoreWar instructions are:
-# Les Instructions légales selon la norme ICWS-88 sont:
+### The legal CoreWar instructions are listed in legal_commands.txt
+### Les Instructions légales selon la norme ICWS-88 sont listés dans legal_commands.txt
 
-#### MOV and Related Commands
-
-MOV  # A    B       SLT  # A    B       DJN    A  # B       SPL    A  # B
-MOV  # A  @ B       SLT  # A  @ B       DJN    A    B       SPL    A    B
-MOV  # A  < B       SLT  # A  < B       DJN    A  @ B       SPL    A  @ B
-MOV    A    B       SLT    A    B       DJN    A  < B       SPL    A  < B
-MOV    A  @ B       SLT    A  @ B       DJN  @ A  # B       SPL  @ A  # B
-MOV    A  < B       SLT    A  < B       DJN  @ A    B       SPL  @ A    B
-MOV  @ A    B       SLT  @ A    B       DJN  @ A  @ B       SPL  @ A  @ B
-MOV  @ A  @ B       SLT  @ A  @ B       DJN  @ A  < B       SPL  @ A  < B
-MOV  @ A  < B       SLT  @ A  < B       DJN  < A  # B       SPL  < A  # B
-MOV  < A    B       SLT  < A    B       DJN  < A    B       SPL  < A    B
-MOV  < A  @ B       SLT  < A  @ B       DJN  < A  @ B       SPL  < A  @ B
-MOV  < A  < B       SLT  < A  < B       DJN  < A  < B       SPL  < A  < B
-
-#### ADD, JMP, and DAT Commands
-ADD  # A    B       JMP    A  # B
-ADD  # A  @ B       JMP    A    B                           DAT  # A  # B
-ADD  # A  < B       JMP    A  @ B                           DAT  # A  < B
-ADD    A    B       JMP    A  < B                           DAT  < A  # B
-ADD    A  @ B       JMP  @ A  # B                           DAT  < A  < B
-ADD    A  < B       JMP  @ A    B
-ADD  @ A    B       JMP  @ A  @ B
-ADD  @ A  @ B       JMP  @ A  < B
-ADD  @ A  < B       JMP  < A  # B
-ADD  < A    B       JMP  < A    B
-ADD  < A  @ B       JMP  < A  @ B
-ADD  < A  < B       JMP  < A  < B
-
-#### SUB and JMZ Commands
-SUB  # A    B       JMZ    A  # B
-SUB  # A  @ B       JMZ    A    B
-SUB  # A  < B       JMZ    A  @ B
-SUB    A    B       JMZ    A  < B
-SUB    A  @ B       JMZ  @ A  # B
-SUB    A  < B       JMZ  @ A    B
-SUB  @ A    B       JMZ  @ A  @ B
-SUB  @ A  @ B       JMZ  @ A  < B
-SUB  @ A  < B       JMZ  < A  # B
-SUB  < A    B       JMZ  < A    B
-SUB  < A  @ B       JMZ  < A  @ B
-SUB  < A  < B       JMZ  < A  < B
-
-#### CMP and JMN Commands
-CMP  # A    B       JMN    A  # B
-CMP  # A  @ B       JMN    A    B
-CMP  # A  < B       JMN    A  @ B
-CMP    A    B       JMN    A  < B
-CMP    A  @ B       JMN  @ A  # B
-CMP    A  < B       JMN  @ A    B
-CMP  @ A    B       JMN  @ A  @ B
-CMP  @ A  @ B       JMN  @ A  < B
-CMP  @ A  < B       JMN  < A  # B
-CMP  < A    B       JMN  < A    B
-CMP  < A  @ B       JMN  < A  @ B
-CMP  < A  < B       JMN  < A  < B
 
 
 
